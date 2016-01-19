@@ -1,0 +1,182 @@
+<!doctype html>
+<html data-ng-app="wmsApp">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<meta name="format-detection" content="telephone=no">
+	<title>WMS</title>
+	<link rel="stylesheet" href="css/reset.css" media="all">
+	<link rel="stylesheet" href="css/common.css" media="all">
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/custom.js"></script>
+
+	<script src="lib/jquery-1.11.2.min.js"></script>
+	<script src="lib/custom.js"></script>
+	<!--[if lt IE 9]>
+		<script src="lib/html5.js"></script>
+		<script src="lib/PIE_uncompressed.js"></script>
+	<![endif]-->
+
+	<link href="lib/jquery/css/sb-admin.css" rel="stylesheet">
+	<link type="text/css" media="screen" href="lib/jquery/css/bootstrap.min.css" rel="stylesheet" />
+
+	<!--[if IE 9]>
+		<style>
+		select {
+		  background-image: none;
+		}
+		</style>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+	 <style>
+	 .col-md-12
+	{
+	    display:table;
+	    width: 100%;
+	}
+	#rowOffcanvas
+	{
+	    display: table-row;
+	}
+	#sidebar
+	{
+		min-width: 110px;
+		max-width: 150px;
+		display: table-cell;
+	}
+	#pagecontent
+	{
+		display: table-cell;
+	}
+
+	 </style>
+	<script src="angular-1.2.9/angular.js"></script>
+	<script src="angular-1.2.9/angular-route.js"></script>
+	<![endif]-->
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+
+	<script src="bower_components/angular/angular-cookies.js"></script>
+	<script src="lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
+
+	<!-- AngularJS GridView UI -->
+	<link rel="styleSheet" href="bower_components/angularUIGrid/ui-grid.min.css"/>
+    <script src="bower_components/angularUIGrid/ui-grid.min.js"></script>
+	<script src="bower_components/angular/angular-sanitize.js"></script>
+
+	<script type="text/javascript" src="js/WebService.js"></script>
+	<script src="js/WmsApp.js"></script>
+	<script src="js/Store.js"></script>
+	<script src="js/Const.js"></script>
+	<script src="js/Pager.js"></script>
+	<script src="js/SubWindow.js"></script>
+	<script src="js/Directive.js"></script>
+	<script src="js/Utility.js"></script>
+	<script src="js/DatetPicker.js"></script>
+	<script src="js/Grid.js"></script>
+	<script src="js/Validate.js"></script>
+	<script src="js/AlertBox.js"></script>
+
+	<!-- コントローラ -->
+	<script src="js/controller/Spin00101Controller.js"></script>
+	<script src="js/controller/Spin00201Controller.js"></script>
+	<script src="js/controller/Spin00301Controller.js"></script>
+	<script src="js/controller/Spcm00901SearchController.js"></script>
+	<script src="js/controller/AlertBoxController.js"></script>
+	<script src="js/controller/Spcm01101Controller.js"></script>
+	<script src="js/controller/Spcm01301Controller.js"></script>
+	<script src="js/controller/Spcm50101Controller.js"></script>
+	<script src="js/controller/Spcm50201Controller.js"></script>
+	<script src="js/controller/Spcm00601Controller.js"></script>
+
+	<script type="text/javascript">
+		var b = document.documentElement;
+		b.setAttribute('data-useragent', navigator.userAgent);
+		b.setAttribute('data-platform', navigator.platform);
+
+		//document.execCommand("SaveAs",false,"");
+
+		function transfer(toDispId){
+			//console.log(angular.element(document.getElementById('span')).scope().fnCheckChangeSpin00101());
+
+			var url = location.href;
+			var constUrl = 'http://localhost:8080/wms/home.html#/';
+			var dispId = url.replace(constUrl, '');
+
+			dtoSpin00101 = null;
+			dtoSpin00201 = null;
+			dtoSpin00301 = null;
+
+			location.href = constUrl + toDispId;
+		}
+
+		// IE 10 == Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)
+	</script>
+</head>
+
+<body>
+	<header>
+		<div id="header_top" class="clearfix">
+			<p id="logo"><img src="images/img_logo_header.png" alt="WMS"></p>
+			<h1>{{pagetitle}}</h1>
+		</div><!--/header_top-->
+		<div id="header_bottom">
+			<ul>
+				<li>荷主：△△△△</li>
+				<li>拠点倉庫：○○倉庫</li>
+				<li>担当者：物流 太郎</li>
+			</ul>
+		</div><!--/header_bottom-->
+	</header>
+
+	<article>
+		<aside>
+			<dl class="nyuuka">
+				<dt>入荷</dt>
+				<dd><a href="javascript:transfer('spin00201')">入荷予定照会</a></dd>
+				<!--<dd><a href="#">入荷予定照会</a></dd> -->
+				<dd><a href="javascript:transfer('spin00101')">入荷予定登録</a></dd>
+				<dd><a href="javascript:transfer('spin00301')">入荷予定出力</a></dd>
+			</dl>
+			<dl class="shukka">
+				<dt>出荷</dt>
+				<dd><a href="#">出荷指示照会</a></dd>
+				<dd><a href="#">在庫引当・取消</a></dd>
+				<dd><a href="#">作業指示リスト発行</a></dd>
+				<dd><a href="#">出庫完了登録</a></dd>
+				<dd><a href="#">出荷完了・ｷｬﾝｾﾙ登録</a></dd>
+				<dd><a href="#">伝票出力</a></dd>
+			</dl>
+			<dl class="kakou">
+				<dt>加工</dt>
+				<dd><a href="#">加工指示作成</a></dd>
+				<dd><a href="#">加工完了登録</a></dd>
+			</dl>
+			<dl class="konai">
+				<dt>庫内</dt>
+				<dd><a href="#">移動確定</a></dd>
+				<dd><a href="#">在庫調整</a></dd>
+			</dl>
+			<dl class="zaiko">
+				<dt>在庫</dt>
+				<dd><a href="#">入出荷進捗照会</a></dd>
+				<dd><a href="#">在庫照会</a></dd>
+				<dd><a href="#">在庫受払照会</a></dd>
+			</dl>
+		</aside>
+
+		<div id="main" data-ng-view></div>
+	</article>
+
+	<!-- 変更点チェック用 -->
+ 	<div id="span" ng-controller="Spin00101Ctrl"></div>
+
+	<footer>
+		<p id="copyright">Copyright &copy; 2015 株式会社ブライセン All Rights Reserved.</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+<div class="headerPopup">
+	<h3 class="modal-title">{{options.title}}</h3>
+</div>
+<div class="modal-body ">
+	<table class="content-popup">
+		<tr><td><img ng-src="images/{{icon}}" alt="Description" />&nbsp;{{message}}</td></tr>
+	</table>
+</div>
+<div class="popup-footer">
+	<!-- <ul ng-repeat="button in options.buttons"
+		class="pull-right button-alert">
+		<li> -->
+			<button ng-repeat="button in options.buttons" class="btn btn-primary" ng-click="btnClick(button.callback)">{{button.label}}</button>
+		<!-- </li> -->
+	</ul>
+</div>

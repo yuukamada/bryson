@@ -1,0 +1,74 @@
+
+<meta charset="UTF-8">
+
+<div class="inputError">{{message}}</div>
+<form name="spin00301" id="spin00301" action="">
+	<section>
+		<h2 class="master">検索条件</h2>
+		<div class="search_conditions_box">
+			<div class="col_box_inner">
+				<dl>
+					<dt>入荷伝票番号</dt>
+					<dd>
+						<input drt-string type="text" name="siplnno" data-ng-model="siplnno" value="" style="width:120px">
+						<div class="inputError">{{siplnnoMessage}}</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>受払区分</dt>
+					<dd>
+						<select ng-model="divkbnModel"  ng-options="lst.DIVKBN as  lst.DIVNM  for lst in divkbns">
+							<option value="">(選択なし)</option>
+						</select>
+						<div class="inputError">{{divkbnModelMessage}}</div>
+					</dd>
+				</dl>
+			</div><!--/col_box_inner-->
+
+			<div class="col_box_inner">
+				<dl>
+					<dt>仕入先コード</dt>
+					<dd>
+						<input drt-string type="text" name="spplycd" data-ng-model="spplycd" value="" style="width:120px">
+						<div class="inputError">{{spplycdMessage}}</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>商品コード</dt>
+					<dd>
+						<input drt-string type="text" id="itemcd" name="itemcd" data-ng-model="itemcd" value="" style="width:120px">
+						<div class="inputError">{{itemcdMessage}}</div>
+					</dd>
+				</dl>
+
+				<dl style="width: 550px; text-align: right;">
+					<p class="inline"><input type="button" data-ng-click="searchBtnClick();" class="btn green" name="表示" value="表 示"></p>
+					<p class="inline"><input type="button" data-ng-click="clearBtnClick();" class="btn green" name="クリア" value="クリア"></p>
+				</dl>
+			</div><!--/col_box_inner-->
+
+		</div><!--/search_conditions_box-->
+	</section>
+
+	<div style="height:10px"></div>
+
+	<section>
+		<h2 class="master">検索結果</h2>
+	</section>
+
+
+	<!-- 一覧のページャと件数 -->
+	<div style="float:left;padding-left:5px;">{{recordsCnt}}件</div>
+	<div ng-controller="PagingController" style="float:right;padding-right:25px"'>
+  		<div id="pagerString" ></div>
+  	</div>
+	<br>
+
+	<!-- 一覧 -->
+	<div style="width:1020px;overflow-x: auto;overflow:auto;">
+	<div id="gridRecords" class="search_result_table_wrapper" style="height:400px;"></div>
+	</div>
+
+	<input type="hidden" ng-value="recNum" />
+</form>
+

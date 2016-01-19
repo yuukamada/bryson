@@ -1,0 +1,80 @@
+
+<!-- TODO:個別に設定するのやめたい。 -->
+<script type="text/javascript">
+	$('input[readonly="readonly"]').on('mousedown keydown', function(){
+	    var $target = $(this);
+	    $target.attr('disabled', 'disabled');
+	    setTimeout(function(){
+	        $target.removeAttr('disabled');
+	    }, 1);
+	});
+</script>
+
+<meta charset="UTF-8">
+
+<div class="inputError">{{message}}</div>
+
+<form name="spin00101" id="spin00101" action="">
+	<section>
+		<div class="search_conditions_box">
+					<div class="col_box_inner">
+						<dl>
+							<dt>入荷伝票番号</dt>
+							<dd>
+								<input drt-string type="text" name="siplnno" data-ng-model="siplnno" value="" style="width:140px;background-color: #D3D3D3" readonly="readonly">
+								<div class="inputError">{{siplnnoMessage}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>仕入先コード</dt>
+							<dd>
+								<input drt-string type="text" name="spplycd" data-ng-model="spplycd" value="" style="width:120px">
+								<div class="inputError">{{spplycdMessage}}</div>
+							</dd>
+						</dl>
+					</div><!--/col_box_inner-->
+
+					<div class="col_box_inner">
+						<dl>
+							<dt>ステータス</dt>
+							<dd>
+								<input drt-string type="text" name="sts" data-ng-model="sts" value="" style="background-color: #D3D3D3" readonly="readonly">
+								<div class="inputError">{{stsMessage}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>受払区分</dt>
+							<dd>
+								<select ng-model="divkbnModel"  ng-options="lst.DIVKBN as  lst.DIVNM  for lst in divkbns" class="ng-pristine ng-untouched ng-valid">
+								</select>
+								<div class="inputError">{{divkbnMessage}}</div>
+							</dd>
+						</dl>
+					</div><!--/col_box_inner-->
+
+				</div><!--/search_conditions_box-->
+
+				<div class="search_conditions_box">
+					<div class="col_box_inner">
+						<dl>
+							<dt style="vertical-align:top;">伝票備考</dt>
+							<dd>
+								<textarea data-ng-model="siremark" cols="50" rows="4">
+								</textarea>
+								<div class="inputError">{{siremarkMessage}}</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</section>
+
+			<div id="bottom_button_area">
+				<p><input type="button" data-ng-click="btnConfirmClick();" id="btnConfirm" class="btn green" name="確 定" value="確 定" ng-show="btnConfirmShow"></p>
+				<p><input type="button" data-ng-click="btnDeleteClick();" id="btnDelete" class="btn green" name="伝票削除" value="伝票削除" ng-show="btnDeleteShow"></p>
+				<p style="float:right"><input type="button" data-ng-click="btnBackClick();" id="btnBack" class="btn green" name="入荷予定へ戻る" value="入荷予定へ戻る" ng-show="btnBackShow"></p>
+			</div><!--/bottom_button_area-->
+
+	<div style="height:10px"></div>
+
+</form>
+

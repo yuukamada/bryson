@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration PUBLIC
+  "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+     <param name="Target" value="System.out" />
+     <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%d %t [%-5p] %c{1} - %m%n" />
+     </layout>
+  </appender>
+
+ <appender name="FILE"
+            class="jp.co.brycen.common.DailyRollingFileAppender">
+    <param name="File"   value="brycen.log" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d %t [%-5p] %c{2} - %m%n"/>
+    </layout>
+  </appender>
+
+
+<category name="jp.co.brycen" >
+    <priority value ="I" />
+    <appender-ref ref="stdout" />
+
+</category>
+
+  <root>
+    <priority value ="D" />
+    <appender-ref ref="FILE" />
+  </root>
+
+</log4j:configuration>

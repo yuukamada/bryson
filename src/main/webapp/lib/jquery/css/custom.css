@@ -1,0 +1,1377 @@
+textarea {
+    resize: none;
+}
+
+.large-Modal .modal-dialog {
+	width: 80%;
+	height: 90%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.input-round-corner {
+	border-radius: 5px !important;
+}
+
+#copyright {
+	margin: 0 0 0 0;
+}
+
+.container_custom {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media ( min-width : 768px) {
+	.container_custom {
+		width: 750px;
+	}
+}
+
+@media ( min-width : 992px) {
+	.container_custom {
+		width: 970px;
+	}
+}
+
+@media ( min-width : 1200px) {
+	.container_custom {
+		width: 1050px;
+	}
+}
+
+.badgecustom {
+	display: inline-block;
+	min-width: 10px;
+	padding: 3px 7px;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: #0F882C;
+	border-radius: 10px;
+}
+
+.glyphiconNav {
+	position: relative;
+	top: 3px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.9;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.glyphiconTable {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 2;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.jumbotron-head {
+	background: #ebf0df;
+	color: black;
+}
+
+/* h1, .h1 {
+	font-size: 36px;
+	text-align: center;
+} */
+.btn-primarycus {
+	color: #fff;
+	background-color: #4fb5d1;
+	border-color: #4fb5d1;
+}
+
+.glyphicon {
+	left: -6px !important;
+}
+
+.popover-content {
+	background-color: yellow !important;
+	color: black !important;
+}
+
+.popover-title {
+	background-color: yellow !important;
+	color: black !important;
+}
+
+.popover.top>.arrow:after {
+	bottom: 1px;
+	margin-left: -10px;
+	content: " ";
+	border-top-color: #fff;
+	border-bottom-width: 0;
+}
+
+.btn-primary2 {
+	background-color: #53b8d4 !important;
+	color: #fff !important;
+}
+
+.list-group-item {
+	background-color: #ebf0df !important;
+	border: none !important;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover
+	{
+	color: #908e91;
+}
+
+a.list-group-item {
+	color: #1995cf !important;
+}
+
+.dropdown-menu {
+	width: 218px !important;
+	margin-left: 14px !important;
+}
+
+/* body {
+	line-height: 0.7 !important;
+} */
+.p-common-color {
+	color: #666666;
+}
+
+.list-group {
+	HEIGHT: 800px;
+	border: solid 1px !important;
+}
+
+.navbar-inverse, .navbar-collapse {
+	background-color: #FFFFFF !important;
+	border-color: #CCCCCC !important;
+}
+
+#topnav {
+	border-bottom: 4px solid #CCCCCC;
+}
+
+/* h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 35px !important;
+} */
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover,
+	.navbar-inverse .navbar-nav>.active>a:focus {
+	background-color: #cccccc !important;
+}
+
+.container-fluid>.navbar-collapse {
+	margin-right: 0;
+	margin-left: -15px !important;
+}
+
+h5 {
+	margin-left: 30px;
+	text-decoration: underline;
+}
+
+.subtitle {
+	margin-top: 25px;
+	color: #C82E24;
+	font-weight: bold;
+	font-size: 26px;
+}
+
+.subsubtitle {
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 18px;
+	border-left: 4px solid red;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 10px;
+}
+/* a {
+
+} */
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th,
+	.table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td,
+	.table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+	border: 2px solid #FFFFFF !important;
+	background-color: #F2F2F2;
+	color: #828282;
+}
+
+.table th {
+	text-align: center;
+}
+/*   .navbar .nav > li.current-menu-item > a, .navbar .nav > li.current-menu-ancestor > a,
+.navbar .nav > li > a:hover, .navbar .nav > li > a:focus {
+color:          black !important;
+background-color: #e3b6b6 !important;
+}  */
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+	background-color: #f7beba !important;
+}
+
+.ui-jqgrid .ui-jqgrid-pager {
+	height: 35px !important;
+}
+
+.ui-jqgrid tr.jqgrow td {
+	font-size: 15px !important;
+	font-weight: normal;
+	overflow: hidden;
+	white-space: pre;
+	height: 30px !important;
+	padding: 0 2px 0 2px;
+	border-bottom-width: 1px;
+	border-bottom-color: inherit;
+	border-bottom-style: solid;
+}
+
+.ui-jqgrid .ui-jqgrid-htable th .ui-jqgrid-sortable {
+	font-size: 15px;
+	height: 40px !important;
+	background-color: #CCCCCC;
+	width: auto;
+	padding-right: 15px;
+}
+
+.ui-jqgrid .ui-jqgrid-htable th div {
+	/* padding-top: 15px !important; */
+	padding-top: 7px !important;
+	float: left;
+	/* margin-left: 5px; */
+}
+
+.table_scroll {
+	width: 910px;
+	overflow-x: auto;
+	height: 397px;
+}
+
+/* .ui-jqgrid-bdiv {
+	height: 302px !important;
+	overflow-x: hidden !important;
+} */
+.ui-jqgrid-labels {
+	width: 910px !important;
+}
+
+.ui-jqgrid, .ui-jqgrid-htable, .ui-jqgrid-view {
+	width: 910px !important;
+}
+
+#result {
+	width: 910px !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default,
+	.ui-widget-header .ui-state-default {
+	color: #6D6D6D !important;
+}
+
+.modal-backdrop.in {
+	opacity: 0 !important;
+}
+
+.container-fluid>.navbar-collapse {
+	margin-right: 0;
+	margin-left: -15px !important;
+	border-color: #CCCCCC;
+}
+
+h5 {
+	margin-left: 30px;
+	text-decoration: underline;
+}
+
+.navbar-default {
+	border-color: white !important;
+}
+
+.modal-backdrop.in {
+	opacity: 0 !important;
+}
+
+/* #file1, #file2 {
+	width: 0px !important;;
+}
+ */
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: middle !important;
+	border-top: 1px solid #ddd;
+}
+
+.message-textarea {
+	resize: none;
+	width: 950px;
+	height: 50px;
+	line-height: initial;
+}
+
+.ui-grid-ico-sort {
+
+}
+
+.buttonPage {
+	border-radius: 7px;
+	border: 1px solid white;
+	padding: 7px 20px !important;
+	font-weight: normal;
+	color: #FFFFFF;
+	width: 120px;
+	height: 40px;
+	background-color: #999999;
+	line-height: 100%;
+}
+
+.buttonGreen {
+	background-color: #63A622;
+}
+
+.buttonRed {
+	background-color: #CB2F23;
+}
+
+.buttonBlue {
+	background-color: #268BBF;
+}
+
+/* CSS Button All page*/
+.buttonRight {
+	position: relative;
+	right: -100px;
+}
+/*CSS Button RepSchedule*/
+.buttonRightRepSche {
+	position: relative;
+	right: -332px;
+}
+
+.positionabsolute {
+	position: absolute;
+	bottom: -260px;
+}
+
+.positionrelative {
+	position: relative;
+}
+
+.ui-jqgrid .ui-pg-input {
+	height: 25px !important;
+}
+
+.ui-jqgrid .ui-pg-selbox {
+	width: 50px !important;
+	height: 25px !important;
+}
+/* Custom button Group List */
+.positionabsoluteGRList {
+	position: absolute;
+	bottom: -260px;
+}
+
+.positionrelativeGRList {
+	position: relative;
+}
+
+.positionabsoluteGRView {
+	position: absolute;
+	bottom: -320px;
+}
+
+.positionabsoluteGRIns {
+	position: absolute;
+	bottom: -330px;
+}
+/* Custom button Type List */
+.positionabsoluteTypeList {
+	position: absolute;
+	bottom: -230px;
+}
+
+.positionrelativeTypeList {
+	position: relative;
+}
+
+.positionabsoluteTypeView {
+	position: absolute;
+	bottom: -320px;
+}
+
+.positionabsoluteTypeIns {
+	position: absolute;
+	bottom: -320px;
+}
+/* Custom button RepSchedule List */
+.positionabsoluteRepScheList {
+	position: absolute;
+	bottom: -230px;
+}
+
+.positionrelativeRepScheList {
+	position: relative;
+}
+
+.positionabsoluteRepScheView {
+	position: absolute;
+	bottom: -320px;
+}
+
+.positionabsoluteRepScheIns {
+	position: absolute;
+	bottom: -320px;
+}
+
+.menuli {
+	background-color: #CCCCCC !important;
+}
+/* jqgrid long text wrapping */
+/* .ui-jqgrid tr.jqgrow td {
+	word-wrap: break-word; IE 5.5+ and CSS3
+	white-space: pre-wrap; CSS3
+	white-space: -moz-pre-wrap; Mozilla, since 1999
+	white-space: -pre-wrap; Opera 4-6
+	white-space: -o-pre-wrap; Opera 7
+	overflow: hidden;
+	height: auto;
+	vertical-align: middle;
+	padding-top: 3px;
+	padding-bottom: 3px
+}
+ */
+.selected {
+	background-color: #cb2f24 !important;
+	color: #FFFFFF;
+}
+
+.checked {
+	background: url(../../../images/ico_radio_on.png) no-repeat 0 center
+		!important;
+}
+
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+}
+
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
+
+.buttonUpload {
+	float: right;
+	width: 105px;
+	height: 27px;
+	margin-bottom: 5px;
+}
+
+input[type="radio"] {
+	opacity: 1 !important;
+}
+
+aside li a:link {
+	height: 35px !important;
+}
+
+.btn {
+	height: 38px !important;
+	text-align: center !important;
+	padding: 0px !important;
+}
+
+.btn_dialog {
+	height: 30px !important;
+	text-align: center !important;
+	padding: 0px !important;
+}
+
+body {
+	width: 1280px;
+	background: #fff;
+	font-family: Meiryo UI, "郢晢ｽ｡郢ｧ�ｽ､郢晢ｽｪ郢ｧ�ｽｪ", Meiryo, "郢晏�ｵﾎ帷ｹｧ�ｽｮ郢晄焔�ｽｧ蛛ｵ縺� Pro W3",
+		"Hiragino Kaku Gothic Pro", Osaka, "�ｿｽ�ｽｼ�ｽｭ�ｿｽ�ｽｼ�ｽｳ �ｿｽ�ｽｼ�ｽｰ郢ｧ�ｽｴ郢ｧ�ｽｷ郢晢ｿｽ郢ｧ�ｽｯ", "MS PGothic",
+		sans-serif !important;
+	font-size: 85% !important;
+	color: #666;
+	line-height: 1.8 !important;
+	cursor: auto;
+}
+
+select, textarea {
+	background-color: white !important;
+	border: 1px solid #bfbfbf !important;
+	border-radius: 5px !important;
+}
+
+#password {
+	background-color: white !important;
+	border: 1px solid #bfbfbf !important;
+	border-radius: 5px !important;
+}
+
+select {
+	-moz-appearance: none;
+	-moz-user-select: none;
+	background-image: url('../../../images/caret.jpg');
+	background-position: center right;
+	background-repeat: no-repeat;
+	border: 1px solid #AAA;
+	margin: 0;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	width: 200px;
+}
+
+/* ============= Login ============================ */
+.form-signin {
+	max-width: 600px;
+	margin: 0;
+}
+
+/* Schedule Settings Layout*/
+#ScheSetTable>thead>tr>th, #ScheSetTable>tbody>tr>th, #ScheSetTable>tfoot>tr>th,
+	#ScheSetTable>thead>tr>td, #ScheSetTable>tbody>tr>td, #ScheSetTable>tfoot>tr>td
+	{
+	border: 2px solid #FFFFFF;
+	background-color: #FFFFFF;
+	color: #828282;
+}
+/* Schedule Settings Select */
+#ScheSetTable>tbody>tr>td>select {
+	width: 100%;
+	margin-top: 5px;
+	background-image: none;
+	height: 170px;
+}
+
+.ui-jqgrid-htable .ui-state-default {
+	border: 2px solid #FFFFFF !important;
+}
+
+.ui-jqgrid tr.jqgrow {
+	height: 38px;
+}
+
+/* ============= InstanceType ============================ */
+.intancetype_width {
+	width: 940px;
+	float: left;
+}
+
+.intancetype_button {
+	float: right;
+	margin-right: -4px;
+	width: 105px;
+	height: 27px;
+	margin-bottom: 5px;
+}
+
+.background_table {
+	background-color: #CCCCCC !important;
+}
+
+.ui-jqgrid tr.jqgrow input[type="radio"] {
+	vertical-align: middle !important;
+}
+
+.ui-jqgrid tr.jqgrow.selected td {
+	background: #f7beba !important;
+}
+
+.ui-jqgrid tr.jqgrow  a {
+	color: #cb2f24;
+	text-decoration: underline;
+}
+
+.td_custom {
+	background-color: #CCCCCC !important;
+	width: 200px !important;
+	text-align: right !important;
+}
+
+.td_instancetype {
+	background-color: #CCCCCC !important;
+	width: 150px !important;
+	text-align: right !important;
+}
+
+.background_all {
+	background-color: #CCCCCC !important;
+	color: #1a99d9 !important;
+}
+
+.input_custom {
+	width: 350px !important;
+	height: 29px !important;
+}
+
+.input_instancetype {
+	width: 65% !important;
+	height: 29px !important;
+}
+/* ========================================= */
+.btn_list_insert {
+	background: #63a621;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+}
+
+.btn_list_update {
+	background: #268cbf;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+}
+
+.btn_list_detail {
+	background: #cb2f24;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+}
+
+.btn_list_search {
+	background: #cb2f24;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+	background-image: url(../../../images/ico_search.png);
+	background-repeat: no-repeat;
+	background-position: 23px center;
+}
+
+.btn_list_clear {
+	background: #999;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+	background-image: url(../../../images/ico_clear.png);
+	background-repeat: no-repeat;
+	background-position: 23px center;
+}
+
+.btn_insert_update {
+	background: #63a621;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+}
+
+.btn_delete {
+	background: #63a621;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+}
+
+.btn_back {
+	background: #268cbf;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+}
+
+.btn_back_management {
+	background: #cb2f24;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	line-height: 1;
+	height: 38px !important;
+	text-align: center !important;
+	padding: 0px !important;
+}
+
+.btn_management_insert {
+	background: #63a621;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+	background-image: url(../../../images/ico_create.png);
+	background-repeat: no-repeat;
+	background-position: 23px center;
+}
+
+.btn_management_start {
+	background: #268cbf;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+	background-image: url(../../../images/ico_start.png);
+	background-repeat: no-repeat;
+	background-position: 23px center;
+}
+
+.btn_management_stop {
+	background: #cb2f24;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	line-height: 1;
+	padding: 11px 7px 10px 62px;
+	background-image: url(../../../images/ico_stop.png);
+	background-repeat: no-repeat;
+	background-position: 23px center;
+}
+
+.btn_management_pause {
+	background: #ff69b4;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	line-height: 1;
+	text-align: center !important;
+	padding: 11px 0 10px 0 !important;
+}
+
+.btn_management_resume {
+	background: #2f4f4f;
+	min-width: 142px;
+	border-radius: 5px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #fff;
+	line-height: 1;
+	text-align: center !important;
+	padding: 11px 0 10px 0 !important;
+}
+
+.ui-jqgrid tr.jqgrow input[type="radio"] {
+	/* opacity: 0 !important; */
+	cursor: pointer !important;
+}
+
+.ui-jqgrid tr.jqgrow label.radio-lbl {
+	margin-top: 10px;
+}
+
+#result tr:nth-child(odd) td {
+	background-color: #e6e6e6;
+}
+
+#result tr:nth-child(even) td {
+	background-color: #f2f2f2;
+}
+
+.ui-jqgrid tr.jqgrow  td {
+	text-align: left !important;
+	/* text-indent: 5px; */
+}
+
+.ui-jqgrid tr.jqgrow  td {
+	text-align: left !important;
+}
+
+.ui-jqgrid tr.jqgrow  td:first-child {
+	text-align: center !important;
+}
+
+#login_name {
+	width: auto !important;
+	min-width: 200px !important;
+}
+
+.radio-group input[type="radio"] {
+	opacity: 0 !important;
+}
+
+.radio-group {
+	margin-top: 5px;
+}
+
+.radio-group .radio-lbl {
+	float: left;
+}
+
+.radio-group .radio-name {
+	margin-right: 20px;
+	float: left;
+	text-indent: 5px;
+}
+
+.btn_management_insert, .btn_management_start, .btn_management_stop {
+	letter-spacing: -2px;
+}
+
+.btn_list_insert, .btn_list_update, .btn_list_detail, .btn_insert_update,
+	.btn_back, .btn_delete {
+	text-align: center !important;
+	padding: 11px 0 10px 0 !important;
+}
+
+.btn_list_search {
+	letter-spacing: -2px;
+}
+
+.buttonPage {
+	line-height: 1 !important;
+}
+
+.buttonUpload {
+	height: 30px !important;
+}
+
+#btndownload1, #btndownload2 {
+	height: 30px;
+}
+
+.instance-group-list-table {
+	min-height: 521px;
+}
+
+.device-instance-list-table {
+	min-height: 452px;
+}
+
+.instance-type-list-table {
+	min-height: 491px;
+}
+
+.user-management-list-table {
+	min-height: 491px;
+}
+
+.replication-schedule-list-table {
+	min-height: 521px;
+}
+
+.data-item-table {
+	min-height: 594px !important;
+}
+
+.replication-manager-list-table {
+	height: 413px;
+}
+
+/*=========== ONLY IE =========================*/
+@media screen\0 {
+	.instance-group-list-table {
+		min-height: 526px;
+	}
+	.device-instance-list-table {
+		min-height: 457px;
+	}
+	.instance-type-list-table {
+		min-height: 496px;
+	}
+	.user-management-list-table {
+		min-height: 496px;
+	}
+	.replication-schedule-list-table {
+		min-height: 526px;
+	}
+	.replication-manager-list-table {
+		height: 418px;
+	}
+	.data-item-table {
+		min-height: 599px !important;
+	}
+	.data-list-table .table_scroll {
+		-ms-overflow-style: scrollbar;
+	}
+}
+/*===========END ONLY IE =========================*/
+
+/* ========================================= */
+body {
+	width: 1263px !important;
+}
+
+#main {
+	width: 1012px !important;
+}
+
+.btn-ok {
+	width: 35px;
+}
+
+.btn-cancel {
+	width: 68px;
+}
+
+.schedule-settings-table {
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 35px;
+}
+
+.schedule-settings-title {
+	margin-left: 50px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+#copyright {
+	position: relative !important;
+	bottom: -390px;
+}
+
+#container {
+	min-height: 0% !important;
+}
+
+.instance-type-list-table .table_scroll {
+	height: 426px !important;
+}
+
+/* .instance-type-list-table .table_scroll .ui-jqgrid-bdiv {
+	height: 362px !important;
+}
+ */
+.instance-group-list-table .table_scroll {
+	height: 456px !important;
+}
+
+/* .instance-group-list-table .table_scroll .ui-jqgrid-bdiv {
+	height: 392px !important;
+} */
+.device-instance-list-table .table_scroll {
+	height: 387px !important;
+}
+
+/* .device-instance-list-table .table_scroll .ui-jqgrid-bdiv {
+	height: 323px !important;
+}
+ */
+.replication-schedule-list-table .table_scroll {
+	height: 456px !important;
+}
+
+/* .replication-schedule-list-table .table_scroll .ui-jqgrid-bdiv {
+	height: 392px !important;
+} */
+.user-management-list-table .table_scroll {
+	height: 426px !important;
+}
+
+/* .user-management-list-table .table_scroll .ui-jqgrid-bdiv {
+	height: 362px !important;
+} */
+.replication-manager-list-table .table_scroll {
+	height: 348px !important;
+}
+
+/* .replication-manager-list-table .table_scroll .ui-jqgrid-bdiv {
+	height: 285px !important;
+} */
+
+/* ================ CUSTOM PAGER FOR GRID =================*/
+#pager .ui-jqgrid-pager {
+	border-left: 0 none !important;
+	border-right: 0 none !important;
+	border-bottom: 0 none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: relative;
+	height: 25px;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 11px;
+}
+
+#pager .ui-pager-control {
+	position: relative;
+}
+
+#pager .ui-pg-table {
+	position: relative;
+	padding-bottom: 2px;
+	width: auto;
+	margin: 0;
+}
+
+#pager .ui-pg-table td {
+	font-weight: normal;
+	vertical-align: middle;
+	padding: 1px;
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	font-size: 0.8em;
+}
+
+#pager .ui-pg-button {
+	height: 19px !important;
+}
+
+#pager .ui-pg-button span {
+	display: block;
+	margin: 1px;
+	float: left;
+}
+
+#pager .ui-jqgrid-pager .ui-pg-button {
+	cursor: pointer;
+}
+
+#pager .ui-separator {
+	height: 18px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	margin: 1px;
+	float: right;
+}
+
+#pager .ui-pg-input {
+	height: 13px;
+	font-size: .8em;
+	margin: 0;
+}
+
+#pager .ui-pg-input {
+	height: 25px !important;
+}
+
+#pager td input {
+	margin: 0;
+}
+
+#pager .ui-pg-selbox {
+	font-size: .8em;
+	line-height: 18px;
+	display: block;
+	height: 18px;
+	margin: 0;
+}
+
+#pager .ui-pg-selbox {
+	height: 25px !important;
+	width: 50px !important;
+}
+
+#pager {
+	width: 913px !important;
+}
+
+/* ================ END CUSTOM PAGER FOR GRID =================*/
+
+/* ================= CUSTOM FOR SORTABLE GRID ============ */
+.ui-jqgrid .ui-jqgrid-htable th {
+	text-align: left !important;
+}
+
+.ui-jqgrid .s-ico {
+	margin-left: 100%;
+}
+
+.ui-jqgrid .ui-icon-asc {
+	margin-top: -25px !important;
+}
+
+.ui-jqgrid .ui-icon-desc {
+	margin-top: -18px !important;
+	margin-left: -1px;
+}
+/* ================= END CUSTOM FOR SORTABLE GRID ============ */
+#result2 #gbox_result1 {
+	width: 595px !important;
+}
+
+#result2  #gview_result1 {
+	height: 385px;
+	width: 595px !important;
+}
+
+#result2 .ui-jqgrid .ui-jqgrid-view .ui-jqgrid-bdiv {
+	height: 320px !important;
+}
+
+.table_scroll #gview_result .ui-jqgrid-bdiv:last-child {
+	height: auto !important;
+	min-height: 405px;
+	overflow: hidden !important;
+}
+
+table.instance-type-table-update td {
+	margin: 0;
+	padding-bottom: 3px !important;
+	padding-top: 3px !important;
+}
+
+article {
+	min-height: 839px;
+}
+
+.login-form-page {
+	height: 809px;
+}
+
+#header_right {
+	width: auto !important;
+}
+
+.table_scroll {
+	overflow-y: hidden !important;
+}
+
+.table_scroll #gview_result .ui-jqgrid-bdiv:last-child>div {
+	overflow-y: auto;
+}
+
+#content-for-scroll {
+	display: block;
+	width: 1px;
+	min-height: 404px;
+	position: relative;
+}
+
+.data-list-table {
+	position: relative;
+}
+
+#custom-scroll-y {
+	position: absolute;
+	width: 18px;
+	overflow: auto;
+	top: 71px;
+	right: 2px;
+}
+
+.replication-manager-list-table #custom-scroll-y {
+	height: 283px;
+}
+
+.instance-type-list-table #custom-scroll-y {
+	height: 361px;
+}
+
+.instance-group-list-table #custom-scroll-y {
+	height: 391px;
+}
+
+.device-instance-list-table #custom-scroll-y {
+	height: 322px;
+}
+
+.replication-schedule-list-table #custom-scroll-y {
+	height: 391px;
+}
+
+.user-management-list-table #custom-scroll-y {
+	height: 361px;
+}
+
+@media screen\0 {
+	article {
+		min-height: 845px;
+	}
+	.login-form-page {
+		height: 815px;
+	}
+	#copyright {
+		bottom: -396px;
+	}
+}
+
+td.input-instancetype-id {
+	height: 37px;
+	background-color: #CCCCCC !important;
+	width: 28%;
+	text-align: right;
+}
+
+td.input-device-id {
+	height: 47px;
+}
+
+td.input-user-id {
+	height: 47px;
+}
+
+td.input-schedule-id {
+	height: 47px;
+}
+
+td.input-group-id {
+	height: 47px;
+}
+
+.grid-col {
+  padding-right: 25px !important;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+
+#overlay-ie {
+   background: #fff;
+    background:rgba(255,255,255,0.5);
+    opacity: 0.1;
+    position: absolute;
+    display: block;
+    width: 100%;
+    z-index: 100;
+    top:0;
+    right:0;
+	overflow: hidden;
+	height: 98%;
+}
+.data-details-table {
+    height: 593px;
+    display: table;
+}
+@media screen\0 {
+	 .data-details-table {
+	  height: 598px;
+	 }
+}
+
+.ui-jqgrid tr.jqgrow td
+{
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: normal !important;
+    height: auto;
+}
+
+/********** Begin Fix gird header css : Added 2015/11/18 v_khoa **********/
+.grid {
+	height: 400px;
+}
+
+.ui-grid-viewport {
+	height: 333px !important;
+}
+
+.ui-grid-header {
+	min-height: 34.4833px !important;
+}
+
+/********** End Fix gird header css : Added 2015/11/18 v_khoa **********/
+
+
+/********** Begin Datepicker css : Added 2015/11/19 v_khoa **********/
+.datepicker {
+	margin-bottom: 0px !important;
+}
+.datepicker .dropdown-menu {
+	width: auto !important;
+	margin-left: 0px !important;
+	padding: 5px !important;
+}
+
+.datepicker .glyphicon {
+	left: 0px !important;
+}
+
+.datepicker .btn {
+	padding: 5px 10px !important;
+	font-size: 12px !important;
+	line-height: 1.5 !important;
+	border-radius: 3px !important;
+	height: auto !important;
+	font-weight: normal !important;
+	color: inherit !important;
+	text-align: center !important;
+}
+
+.datepicker th .btn, .datepicker li:last-child .btn {
+	min-width: auto !important;
+}
+
+.datepicker .input-group-btn button {
+	min-width: auto !important;
+	height: 34px !important;
+}
+
+.datepicker .btn-group button {
+	margin-right: 5px;
+}
+
+.datepicker thead>tr>th:first-child {
+	width: 38px !important;
+}
+
+.datepicker td {
+	padding: 1px !important;
+}
+
+.datepicker th {
+	font-weight: normal;
+	padding: 0 !important;
+}
+
+/********** End Datepicker css : Added 2015/11/19 v_khoa **********/
