@@ -29,4 +29,23 @@ public class Spin00201SearchConditionDto extends AbstractDto{
 	// 仕入先コード
 	public String SPPLYCD;
 
+	// チェック
+	public String CHK1;
+
+
+	// チェック
+	public String CHK2;
+
+
+	// チェック
+	public String CHK3;
+
+
+	// チェック
+	public String CHK4;
+
+
+	// チェック
+	public String CHK5;
+
 }

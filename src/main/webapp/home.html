@@ -8,11 +8,9 @@
 	<title>WMS</title>
 	<link rel="stylesheet" href="css/reset.css" media="all">
 	<link rel="stylesheet" href="css/common.css" media="all">
-	<script src="js/jquery-1.11.2.min.js"></script>
-	<script src="js/custom.js"></script>
-
 	<script src="lib/jquery-1.11.2.min.js"></script>
-	<script src="lib/custom.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="lib/jquery.canvasChart.js"></script>
 	<!--[if lt IE 9]>
 		<script src="lib/html5.js"></script>
 		<script src="lib/PIE_uncompressed.js"></script>
@@ -110,6 +108,7 @@
 			dtoSpin00101 = null;
 			dtoSpin00201 = null;
 			dtoSpin00301 = null;
+			dtoSpin01601 = null;
 
 			location.href = constUrl + toDispId;
 		}
@@ -165,7 +164,7 @@
 				<dt>在庫</dt>
 				<dd><a href="#">入出荷進捗照会</a></dd>
 				<dd><a href="#">在庫照会</a></dd>
-				<dd><a href="#">在庫受払照会</a></dd>
+				<dd><a href="javascript:transfer('spin01601')">商品照会</a></dd>
 			</dl>
 		</aside>
 

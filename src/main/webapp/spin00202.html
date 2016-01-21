@@ -1,0 +1,40 @@
+
+<!-- TODO:個別に設定するのやめたい。 -->
+<script type="text/javascript">
+	$('.canvasChart').canvasChart({
+		    polygon : 5,
+		    chartPointType : ['arc'],
+		    chartPointSize : [2],
+		    valuationName : ['経験','コミュニケーション','コーディング','設計','体力'],
+		    printZero : false,
+		    scale : false,
+		    bgFill : false
+	});
+</script>
+<meta charset="UTF-8">
+
+<h1>スキル比較グラフ</h1>
+<div class="canvasChart">
+	<canvas width="500" height="500"></canvas>
+	<div class="chartInput">
+		<input type="hidden" value="2" name="経験" />
+		<input type="hidden" value="1" name="コミュニケーション" />
+		<input type="hidden" value="1" name="コーディング" />
+		<input type="hidden" value="5" name="設計" />
+		<input type="hidden" value="3" name="体力" />
+	</div>
+	<div class="chartInput">
+		<input type="hidden" value="5" name="経験" />
+		<input type="hidden" value="1" name="コミュニケーション" />
+		<input type="hidden" value="2" name="コーディング" />
+		<input type="hidden" value="5" name="設計" />
+		<input type="hidden" value="3" name="体力" />
+	</div>
+	<div class="chartInput">
+		<input type="hidden" value="2" name="経験" />
+		<input type="hidden" value="3" name="コミュニケーション" />
+		<input type="hidden" value="1" name="コーディング" />
+		<input type="hidden" value="4" name="設計" />
+		<input type="hidden" value="3" name="体力" />
+	</div>
+</div>

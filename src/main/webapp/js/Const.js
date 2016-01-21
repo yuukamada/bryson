@@ -10,6 +10,7 @@ var projectName = 'wms';
 // 画面ID
 var SPIN00301 = 'SPIN00301';
 var SPIN00201 = 'SPIN00201';
+var SPIN01601 = 'SPIN01601';
 var SPIN00101 = 'SPIN00101';
 
 // 機能ID
@@ -44,8 +45,15 @@ var spin00101CheckWs = 'Spin00101Check';
 var spin00201InitWs = 'Spin00201Init';
 var spin00201SearchWs = 'Spin00201Search';
 var spin00201SearchCntWs = 'Spin00201SearchCnt';
+var spin00201Hikaku = 'Spin00201Hikaku';
 var spin00201CsvCreateWs = 'Spin00201CsvCreate';
 var spin00201CsvDownloadWs = 'Spin00201CsvDownload';
+
+var spin01601InitWs = 'Spin01601Init';
+var spin01601SearchWs = 'Spin01601Search';
+var spin01601SearchCntWs = 'Spin01601SearchCnt';
+var spin01601CsvCreateWs = 'Spin01601CsvCreate';
+var spin01601CsvDownloadWs = 'Spin01601CsvDownload';
 
 var spin00301InitWs = 'Spin00301Init';
 var spin00301SearchWs = 'Spin00301Search';

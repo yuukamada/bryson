@@ -54,6 +54,10 @@ wmsApp.config(['$routeProvider', function($routeProvider) {
         title: '入荷予定出力',
         templateUrl: 'spin00301.html',
         controller: 'Spin00301Ctrl'
+    }).when('/spin00202', {
+        title: '比較',
+        templateUrl: 'spin00202.html',
+        controller: 'Spin00202Ctrl'
     }).otherwise({
         redirectTo: '/list'
     });

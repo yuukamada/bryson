@@ -73,6 +73,7 @@ loginInfo.brnchnm = "葛西倉庫";
 authKbnList ['SPIN00101'] = '2';
 authKbnList ['SPIN00201'] = '2';
 authKbnList ['SPIN00301'] = '2';
+authKbnList ['SPIN01601'] = '2';
 
 // TODO:後で消す
 var MW000010 = "%1が%2件を超えています。よろしいですか？";

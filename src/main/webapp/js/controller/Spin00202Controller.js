@@ -2,7 +2,7 @@
  * [入荷予定照会]画面
  */
 
-function spin00201Dto(){
+function spin00202Dto(){
 	  this.initFlg = true;
 	  this.arvlplndateFrom = "";
 	  this.arvlplndateTo = "";
@@ -24,9 +24,10 @@ function spin00201Dto(){
 var dtoSpin00201 = null;
 var rows102;
 
-wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$modal', '$rootScope', '$timeout', 'AlertService'
+wmsController.controller('Spin00202Ctrl', ['$scope', '$http', '$location', '$modal', '$rootScope', '$timeout', 'AlertService'
     ,function($scope, $http, $location, $modal, $rootScope, $timeout, AlertService) {
 
+	alert(1);
 	var dtoGridInfo = new gridInfoDto();
 
 	// 初期表示
@@ -157,7 +158,7 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 	 * 初期表示
 	 */
 	function fnInit(){
-		$rootScope.pagetitle = "入荷予定照会";
+		$rootScope.pagetitle = "比較";
 
 		// カレンダー用
 		$scope.datetimeValue = {};
