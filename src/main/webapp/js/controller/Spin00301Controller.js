@@ -31,11 +31,21 @@ wmsController.controller('Spin00301Ctrl', ['$scope', '$http', '$location', '$mod
     	// 検索条件を変数に保持
     	fnStoreSearchCondition();
 
-    	// レコード取得（すぐ表示するとＰＤＦ出力が間に合わない？）
+    	// レコード取得
     	fnSearchRecords(1, tmt030System.SYSNUMVAL2, true);
 
-    	//pdfを表示
-    	$(this).delay(1000).queue(function() {
+    };
+
+ // [出力]ボタンクリックイベント
+    $scope.OutputBtnClick = function() {
+    	// 検索条件を変数に保持
+    	fnStoreSearchCondition();
+
+    	// レコード取得
+    	fnSearchRecords(0, 0, true);
+
+    	//pdfを表示（すぐ表示するとＰＤＦ出力が間に合わない？）
+    	$(this).delay(2000).queue(function() {
     		 window.open('/pdf/test.pdf');
     		 $(this).dequeue();
     	});

@@ -7,33 +7,33 @@ import jp.co.brycen.common.dto.AbstractDto;
  */
 public class Spin00101SearchHeaderDto extends AbstractDto{
 
-	// 入荷伝票番号
-	public String SIPLNNO;
+		// タレント番号
+		public int ID;
 
-	// ステータス名
-	public String PLANSTSNM;
+		// 氏名
+		public String NAME;
 
-	// ステータスコード
-	public String STSCD;
+		// 年齢
+		public int AGE;
 
-	// 入荷予定日
-	public String ARVLPLNDATE;
+		// 住所
+		public String ADDRESS;
 
-	// 受払区分コード
-	public String DIVKBN;
+		// 経験年数
+		public int EXPERIENCE;
 
-	// 受払区分
-	public String DIVNM;
+		// コミュニケーション能力
+		public int COMMUNICATION;
 
-	// 仕入先コード
-	public String SPPLYCD;
+		// コーディング能力
+		public int CODING;
 
-	// 仕入先名
-	public String SPPLYNM;
+		// 設計能力
+		public int DESIGN;
 
-	// 伝票備考
-	public String SIREMARK;
+		// テスト能力
+		public int TEST;
 
-	// 更新日時
-	public String UPDDATETIME;
+		// 体力
+		public int PHYSICAL;
 }

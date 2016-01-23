@@ -58,92 +58,29 @@ public class Spin00201SearchAllRecProcess extends AbstractProcess {
 		List<ErrorDto> msg = new ArrayList<ErrorDto>();
 
 		Spin00201SearchRequest searchItemInfo = (Spin00201SearchRequest) request;
-		String arvlplndateFrom = searchItemInfo.spin00201SearchCondition.ARVLPLNDATEFROM;
-		String arvlplndateTo = searchItemInfo.spin00201SearchCondition.ARVLPLNDATETO;
+//		String arvlplndateFrom = searchItemInfo.spin00201SearchCondition.ARVLPLNDATEFROM;
+//		String arvlplndateTo = searchItemInfo.spin00201SearchCondition.ARVLPLNDATETO;
 
 		FormatUtility format = new FormatUtility();
 
 		// 入荷予定日(To) < 入荷予定日(From)
-		if (!"".equals(arvlplndateFrom) && arvlplndateFrom != null && !"".equals(arvlplndateTo) && arvlplndateTo != null) {
-			// 日付型に変換
-			Date  arvlplndateFromBuf = format.strToDate(arvlplndateFrom);
-			Date  arvlplndateToBuf = format.strToDate(arvlplndateTo);
-
-			if (arvlplndateToBuf.before(arvlplndateFromBuf) == true) {
-				ErrorDto ret = new ErrorDto();
-				ret.controlID = "date2";
-				ret.errMsg = MessageUtility.getMessageMsg("ME000011", searchItemInfo.accessInfo.CSTMCD).replace("%1", "入荷予定日");
-				msg.add(ret);
-			}
-		}
+//		if (!"".equals(arvlplndateFrom) && arvlplndateFrom != null && !"".equals(arvlplndateTo) && arvlplndateTo != null) {
+//			// 日付型に変換
+//			Date  arvlplndateFromBuf = format.strToDate(arvlplndateFrom);
+//			Date  arvlplndateToBuf = format.strToDate(arvlplndateTo);
+//
+//			if (arvlplndateToBuf.before(arvlplndateFromBuf) == true) {
+//				ErrorDto ret = new ErrorDto();
+//				ret.controlID = "date2";
+//				ret.errMsg = MessageUtility.getMessageMsg("ME000011", searchItemInfo.accessInfo.CSTMCD).replace("%1", "入荷予定日");
+//				msg.add(ret);
+//			}
+//		}
 
 		// エラーがあったらエラーメッセージをセットしてthrow
 		if (msg.size() > 0) {
 			throw new ProcessCheckErrorException(msg, ConstantValue.FATAL_ERROR);
 		}
-	}
-
-	//PDF出力
-	public String createPdf() throws DocumentException, IOException{
-
-		//文書オブジェクトを生成
-		Document doc = new Document(PageSize.A4, 10, 10, 50, 0);
-
-		//出力先(アウトプットストリーム)の生成
-		FileOutputStream fos = new FileOutputStream("C:\\temp\\test.pdf");
-
-		//フォントの設定
-		Font font = new Font(BaseFont.createFont("HeiseiMin-W3", "UniJIS-UCS2-HW-H", BaseFont.NOT_EMBEDDED),11);
-
-		//アウトプットストリームをPDFWriterに設定
-		PdfWriter pdfwriter = PdfWriter.getInstance(doc, fos);
-
-		//文章オブジェクト オープン
-		doc.open();
-
-		//ヘッダー
-		Paragraph header = new Paragraph(new Paragraph("タイトル", font));
-		header.setAlignment(Element.ALIGN_CENTER);
-
-		//日付
-		String nowDate = getNowDate();
-		Paragraph date = new Paragraph(nowDate);
-		date.setAlignment(Element.ALIGN_RIGHT);
-
-		Paragraph space = new Paragraph(" ");
-
-		//表の作成
-		PdfPTable table = new PdfPTable(2);
-
-		//表の要素(列タイトル)を作成
-		PdfPCell cell1_1 = new PdfPCell(new Paragraph("商品名", font));
-		cell1_1.setGrayFill(0.8f);		//セルを灰色に設定
-		table.addCell(cell1_1);
-		PdfPCell cell1_2 = new PdfPCell(new Paragraph("価格", font));
-		cell1_2.setGrayFill(0.8f);		//セルを灰色に設定
-
-		//表の要素を作成
-		PdfPCell cell2_1 = new PdfPCell(new Paragraph("赤福もち", font));
-		PdfPCell cell2_2 = new PdfPCell(new Paragraph("1,200円", font));
-
-		//表の要素を表に追加する
-		table.addCell(cell1_2);
-		table.addCell(cell2_1);
-		table.addCell(cell2_2);
-
-		doc.add(header);
-		doc.add(space);
-		doc.add(date);
-		doc.add(space);
-		doc.add(table);
-
-		//文章オブジェクト クローズ
-		doc.close();
-
-		//PDFWriter クローズ
-		pdfwriter.close();
-
-		return null;
 	}
 
 	//現在日時の取得
@@ -162,34 +99,19 @@ public class Spin00201SearchAllRecProcess extends AbstractProcess {
 		DBStatement ps = null;
 
 		try {
-			createPdf();
-		} catch (DocumentException de) {
-			System.err.println(de.getMessage());
-		} catch (IOException ioe) {
-			System.err.println(ioe.getMessage());
-		}
-//		} catch (DocumentException e1) {
-//			// TODO 自動生成された catch ブロック
-//			e1.printStackTrace();
-//		} catch (IOException e1) {
-//			// TODO 自動生成された catch ブロック
-//			e1.printStackTrace();
-//		}
-
-		try {
 			// 検索条件
 			Spin00201SearchRequest searchItemInfo = (Spin00201SearchRequest) request;
-			String arvlplndateFrom = searchItemInfo.spin00201SearchCondition.ARVLPLNDATEFROM;
-			String arvlplndateTo = searchItemInfo.spin00201SearchCondition.ARVLPLNDATETO;
-			String sipnno = searchItemInfo.spin00201SearchCondition.SIPLNNO;
-			String stscd = searchItemInfo.spin00201SearchCondition.STSCD;
-			String divkbn = searchItemInfo.spin00201SearchCondition.DIVKBN;
-			String itemcd = searchItemInfo.spin00201SearchCondition.ITEMCD;
-			String spplycd = searchItemInfo.spin00201SearchCondition.SPPLYCD;
-			Integer pageNum = searchItemInfo.pageInfo.pageNum;
-			Integer dispNum = searchItemInfo.pageInfo.dispNum;
-			String cstmcd = searchItemInfo.accessInfo.CSTMCD;
-			String brnchcd = searchItemInfo.accessInfo.BRNCHCD;
+			String ID = String.valueOf(searchItemInfo.spin00201SearchCondition.ID);
+//			String arvlplndateTo = searchItemInfo.spin00201SearchCondition.ARVLPLNDATETO;
+//			String sipnno = searchItemInfo.spin00201SearchCondition.SIPLNNO;
+//			String stscd = searchItemInfo.spin00201SearchCondition.STSCD;
+//			String divkbn = searchItemInfo.spin00201SearchCondition.DIVKBN;
+//			String itemcd = searchItemInfo.spin00201SearchCondition.ITEMCD;
+//			String spplycd = searchItemInfo.spin00201SearchCondition.SPPLYCD;
+//			Integer pageNum = searchItemInfo.pageInfo.pageNum;
+//			Integer dispNum = searchItemInfo.pageInfo.dispNum;
+//			String cstmcd = searchItemInfo.accessInfo.CSTMCD;
+//			String brnchcd = searchItemInfo.accessInfo.BRNCHCD;
 
 
 			// SQL
@@ -200,125 +122,125 @@ public class Spin00201SearchAllRecProcess extends AbstractProcess {
 			strSql.append(this.setSelectFields());
 
 			strSql.append("	FROM");
-			strSql.append("		TIN020_PLANHED");
-			strSql.append("	LEFT JOIN (SELECT");
-			strSql.append("						 CSTMCD");
-			strSql.append("						,BRNCHCD");
-			strSql.append("						,SIPLNNO");
-			strSql.append("						,CASE");
-			strSql.append("							 WHEN ARVLCOMPFLG = '0' AND SICOMPFLG = '0' THEN '01'");
-			strSql.append("							 WHEN ARVLCOMPFLG = '1' AND SICOMPFLG = '0' THEN '03'");
-			strSql.append("							 WHEN ARVLCOMPFLG = '2' AND SICOMPFLG = '0' THEN '02'");
-			strSql.append("							 WHEN SICOMPFLG = '1' THEN '05'");
-			strSql.append("				 			WHEN SICOMPFLG = '2' THEN '04'");
-			strSql.append("						END AS STSCD");
-			strSql.append("					FROM");
-			strSql.append("						TIN010_STS");
-			strSql.append("					) STS");
-			strSql.append("		ON TIN020_PLANHED.CSTMCD = STS.CSTMCD");
-			strSql.append("		AND TIN020_PLANHED.BRNCHCD = STS.BRNCHCD");
-			strSql.append("		AND TIN020_PLANHED.SIPLNNO = STS.SIPLNNO");
-			strSql.append("	LEFT JOIN TMT050_NAME");
-			strSql.append("		ON  TIN020_PLANHED.CSTMCD = TMT050_NAME.CSTMCD");
-			strSql.append("		AND TMT050_NAME.RCDKBN = '0250'");
-			strSql.append("		AND STS.STSCD = TMT050_NAME.DATACD");
-			strSql.append("	LEFT JOIN TMT280_DIV");
-			strSql.append("		ON TIN020_PLANHED.CSTMCD = TMT280_DIV.CSTMCD");
-			strSql.append("		AND TIN020_PLANHED.DIVKBN = TMT280_DIV.DIVKBN");
-			strSql.append("	LEFT JOIN TMT140_SPPLY");
-			strSql.append("		ON TIN020_PLANHED.CSTMCD = TMT140_SPPLY.CSTMCD");
-			strSql.append("		AND TIN020_PLANHED.SPPLYCD = TMT140_SPPLY.SPPLYCD");
-			strSql.append("	WHERE TIN020_PLANHED.CSTMCD = ? ");
-			strSql.append("	   AND TIN020_PLANHED.BRNCHCD = ? ");
-
-			// 入荷予定(From)
-			if (!("".equals(arvlplndateFrom)) && arvlplndateFrom != null) {
-				strSql.append(" AND TIN020_PLANHED.ARVLPLNDATE >= ? ");
-			}
-			// 入荷予定(To)
-			if (!("".equals(arvlplndateTo)) && arvlplndateTo != null) {
-				strSql.append(" AND TIN020_PLANHED.ARVLPLNDATE <= ? ");
-			}
-			// 入荷伝票番号
-			if (!("".equals(sipnno)) && sipnno != null) {
-				strSql.append(" AND TIN020_PLANHED.SIPLNNO = ? ");
-			}
-			// ステータス
-			if (!("".equals(stscd)) && stscd != null && !("99".equals(stscd))) {
-				strSql.append(" AND STS.STSCD =  ?  ");
-			}
-			// 受払区分
-			if (!("".equals(divkbn)) && divkbn != null) {
-				strSql.append(" AND TIN020_PLANHED.DIVKBN =  ?");
-			}
-			// 商品コード
-			if (!("".equals(itemcd)) && itemcd != null) {
-				strSql.append(" AND EXISTS (");
-				strSql.append("			SELECT");
-				strSql.append("				*");
-				strSql.append("			FROM");
-				strSql.append("				TIN040_PLANDTL");
-				strSql.append("			WHERE TIN040_PLANDTL.CSTMCD = TIN020_PLANHED.CSTMCD");
-				strSql.append("				AND TIN040_PLANDTL.BRNCHCD = TIN020_PLANHED.BRNCHCD");
-				strSql.append("				AND TIN040_PLANDTL.SIPLNNO = TIN020_PLANHED.SIPLNNO");
-				strSql.append("				AND TIN040_PLANDTL.ITEMCD = ?");
-				strSql.append("		) ");
-			}
-			// 仕入先コード
-			if (!("".equals(spplycd)) && spplycd != null) {
-				strSql.append(" AND TIN020_PLANHED.SPPLYCD =  ? ");
-			}
+			strSql.append("		TMS");
+//			strSql.append("	LEFT JOIN (SELECT");
+//			strSql.append("						 CSTMCD");
+//			strSql.append("						,BRNCHCD");
+//			strSql.append("						,SIPLNNO");
+//			strSql.append("						,CASE");
+//			strSql.append("							 WHEN ARVLCOMPFLG = '0' AND SICOMPFLG = '0' THEN '01'");
+//			strSql.append("							 WHEN ARVLCOMPFLG = '1' AND SICOMPFLG = '0' THEN '03'");
+//			strSql.append("							 WHEN ARVLCOMPFLG = '2' AND SICOMPFLG = '0' THEN '02'");
+//			strSql.append("							 WHEN SICOMPFLG = '1' THEN '05'");
+//			strSql.append("				 			WHEN SICOMPFLG = '2' THEN '04'");
+//			strSql.append("						END AS STSCD");
+//			strSql.append("					FROM");
+//			strSql.append("						TIN010_STS");
+//			strSql.append("					) STS");
+//			strSql.append("		ON TIN020_PLANHED.CSTMCD = STS.CSTMCD");
+//			strSql.append("		AND TIN020_PLANHED.BRNCHCD = STS.BRNCHCD");
+//			strSql.append("		AND TIN020_PLANHED.SIPLNNO = STS.SIPLNNO");
+//			strSql.append("	LEFT JOIN TMT050_NAME");
+//			strSql.append("		ON  TIN020_PLANHED.CSTMCD = TMT050_NAME.CSTMCD");
+//			strSql.append("		AND TMT050_NAME.RCDKBN = '0250'");
+//			strSql.append("		AND STS.STSCD = TMT050_NAME.DATACD");
+//			strSql.append("	LEFT JOIN TMT280_DIV");
+//			strSql.append("		ON TIN020_PLANHED.CSTMCD = TMT280_DIV.CSTMCD");
+//			strSql.append("		AND TIN020_PLANHED.DIVKBN = TMT280_DIV.DIVKBN");
+//			strSql.append("	LEFT JOIN TMT140_SPPLY");
+//			strSql.append("		ON TIN020_PLANHED.CSTMCD = TMT140_SPPLY.CSTMCD");
+//			strSql.append("		AND TIN020_PLANHED.SPPLYCD = TMT140_SPPLY.SPPLYCD");
+//			strSql.append("	WHERE TIN020_PLANHED.CSTMCD = ? ");
+//			strSql.append("	   AND TIN020_PLANHED.BRNCHCD = ? ");
+//
+//			// 入荷予定(From)
+//			if (!("".equals(arvlplndateFrom)) && arvlplndateFrom != null) {
+//				strSql.append(" AND TIN020_PLANHED.ARVLPLNDATE >= ? ");
+//			}
+//			// 入荷予定(To)
+//			if (!("".equals(arvlplndateTo)) && arvlplndateTo != null) {
+//				strSql.append(" AND TIN020_PLANHED.ARVLPLNDATE <= ? ");
+//			}
+//			// 入荷伝票番号
+//			if (!("".equals(sipnno)) && sipnno != null) {
+//				strSql.append(" AND TIN020_PLANHED.SIPLNNO = ? ");
+//			}
+//			// ステータス
+//			if (!("".equals(stscd)) && stscd != null && !("99".equals(stscd))) {
+//				strSql.append(" AND STS.STSCD =  ?  ");
+//			}
+//			// 受払区分
+//			if (!("".equals(divkbn)) && divkbn != null) {
+//				strSql.append(" AND TIN020_PLANHED.DIVKBN =  ?");
+//			}
+//			// 商品コード
+//			if (!("".equals(itemcd)) && itemcd != null) {
+//				strSql.append(" AND EXISTS (");
+//				strSql.append("			SELECT");
+//				strSql.append("				*");
+//				strSql.append("			FROM");
+//				strSql.append("				TIN040_PLANDTL");
+//				strSql.append("			WHERE TIN040_PLANDTL.CSTMCD = TIN020_PLANHED.CSTMCD");
+//				strSql.append("				AND TIN040_PLANDTL.BRNCHCD = TIN020_PLANHED.BRNCHCD");
+//				strSql.append("				AND TIN040_PLANDTL.SIPLNNO = TIN020_PLANHED.SIPLNNO");
+//				strSql.append("				AND TIN040_PLANDTL.ITEMCD = ?");
+//				strSql.append("		) ");
+//			}
+//			// 仕入先コード
+//			if (!("".equals(spplycd)) && spplycd != null) {
+//				strSql.append(" AND TIN020_PLANHED.SPPLYCD =  ? ");
+//			}
 
 			// キー情報で取得件数を絞る場合
-			strSql.append(this.setKey());
+			//strSql.append(this.setKey());
 
 			// 取得件数をセット(一覧に表示をする分を取得したい場合にセットする)
-			strSql.append(this.setLimit(pageNum, dispNum));
+			//strSql.append(this.setLimit(pageNum, dispNum));
 
 			System.out.println(strSql);
 			ps = dba.prepareStatement(strSql);
 
-			// バインド変数セット
-			int index = 3;
-
-			ps.setString(1, cstmcd);
-			ps.setString(2, brnchcd);
-
-			// 入荷予定(From)
-			if (!("".equals(arvlplndateFrom)) && arvlplndateFrom != null) {
-				ps.setString(index, arvlplndateFrom);
-				index++;
-			}
-			// 入荷予定(To)
-			if (!("".equals(arvlplndateTo)) && arvlplndateTo != null) {
-				ps.setString(index, arvlplndateTo);
-				index++;
-			}
-			// 入荷伝票番号
-			if (!("".equals(sipnno)) && sipnno != null) {
-				ps.setString(index, sipnno);
-				index++;
-			}
-			// ステータス
-			if (!("".equals(stscd)) && stscd != null && !("99".equals(stscd))) {
-				ps.setString(index, stscd);
-				index++;
-			}
-			// 受払区分
-			if (!("".equals(divkbn)) && divkbn != null) {
-				ps.setString(index, divkbn);
-				index++;
-			}
-			// 商品コード
-			if (!("".equals(itemcd)) && itemcd != null) {
-				ps.setString(index, itemcd);
-				index++;
-			}
-			// 仕入先コード
-			if (!("".equals(spplycd)) && spplycd != null) {
-				ps.setString(index, spplycd);
-				index++;
-			}
+//			// バインド変数セット
+//			int index = 3;
+//
+//			ps.setString(1, cstmcd);
+//			ps.setString(2, brnchcd);
+//
+//			// 入荷予定(From)
+//			if (!("".equals(arvlplndateFrom)) && arvlplndateFrom != null) {
+//				ps.setString(index, arvlplndateFrom);
+//				index++;
+//			}
+//			// 入荷予定(To)
+//			if (!("".equals(arvlplndateTo)) && arvlplndateTo != null) {
+//				ps.setString(index, arvlplndateTo);
+//				index++;
+//			}
+//			// 入荷伝票番号
+//			if (!("".equals(sipnno)) && sipnno != null) {
+//				ps.setString(index, sipnno);
+//				index++;
+//			}
+//			// ステータス
+//			if (!("".equals(stscd)) && stscd != null && !("99".equals(stscd))) {
+//				ps.setString(index, stscd);
+//				index++;
+//			}
+//			// 受払区分
+//			if (!("".equals(divkbn)) && divkbn != null) {
+//				ps.setString(index, divkbn);
+//				index++;
+//			}
+//			// 商品コード
+//			if (!("".equals(itemcd)) && itemcd != null) {
+//				ps.setString(index, itemcd);
+//				index++;
+//			}
+//			// 仕入先コード
+//			if (!("".equals(spplycd)) && spplycd != null) {
+//				ps.setString(index, spplycd);
+//				index++;
+//			}
 
 			// SQL実行
 			rs = ps.executeQuery();
@@ -360,12 +282,20 @@ public class Spin00201SearchAllRecProcess extends AbstractProcess {
 	protected String setSelectFields()
 	{
 		StringBuilder strSql = new StringBuilder();
-		strSql.append("	TIN020_PLANHED.ARVLPLNDATE");
-		strSql.append("	,TIN020_PLANHED.SIPLNNO");
-		strSql.append("	,TMT050_NAME.DATANM AS PLANSTSNM");
-		strSql.append("	,TMT280_DIV.DIVNM");
-		strSql.append("	,TIN020_PLANHED.SPPLYCD");
-		strSql.append("	,TMT140_SPPLY.SPPLYNM");
+		strSql.append("	ID");
+		strSql.append("	,NAME");
+		strSql.append("	,AGE");
+		strSql.append("	,ADDRESS");
+		strSql.append("	,EXPERIENCE");
+		strSql.append("	,COMMUNICATION");
+		strSql.append("	,CODING");
+		strSql.append("	,DESIGN");
+		strSql.append("	,TEST");
+		strSql.append("	,PHYSICAL");
+//		strSql.append("	,TMT050_NAME.DATANM AS PLANSTSNM");
+//		strSql.append("	,TMT280_DIV.DIVNM");
+//		strSql.append("	,TIN020_PLANHED.SPPLYCD");
+//		strSql.append("	,TMT140_SPPLY.SPPLYNM");
 
 		return strSql.toString();
 	}
@@ -381,12 +311,17 @@ public class Spin00201SearchAllRecProcess extends AbstractProcess {
 
 		while (rs.next()) {
 			Spin00201SearchRowDto row = new Spin00201SearchRowDto();
-			row.ARVLPLNDATE = rs.getString("ARVLPLNDATE");
-			row.SIPLNNO = rs.getString("SIPLNNO");
-			row.PLANSTSNM = rs.getString("PLANSTSNM");
-			row.DIVNM = rs.getString("DIVNM");
-			row.SPPLYCD = rs.getString("SPPLYCD");
-			row.SPPLYNM = rs.getString("SPPLYNM");
+			row.ID = Integer.parseInt(rs.getString("ID"));
+			row.NAME = rs.getString("NAME");
+			row.AGE = Integer.parseInt(rs.getString("AGE"));
+			row.ADDRESS = rs.getString("ADDRESS");
+			row.EXPERIENCE = Integer.parseInt(rs.getString("EXPERIENCE"));
+			row.COMMUNICATION = Integer.parseInt(rs.getString("COMMUNICATION"));
+			row.CODING = Integer.parseInt(rs.getString("CODING"));
+			row.DESIGN = Integer.parseInt(rs.getString("DESIGN"));
+			row.TEST = Integer.parseInt(rs.getString("TEST"));
+			row.PHYSICAL = Integer.parseInt(rs.getString("PHYSICAL"));
+
 
 			lst.add(row);
 		}

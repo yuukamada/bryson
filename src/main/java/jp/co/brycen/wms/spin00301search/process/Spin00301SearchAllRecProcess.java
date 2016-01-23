@@ -266,7 +266,10 @@ public class Spin00301SearchAllRecProcess extends AbstractProcess {
 			strSql.append(this.setKey());
 
 			// 取得件数をセット(一覧に表示をする分を取得したい場合にセットする)
-			strSql.append(this.setLimit(pageNum, dispNum));
+			if(pageNum == 0 && dispNum == 0)
+			{
+				strSql.append(this.setLimit(pageNum, dispNum));
+			}
 
 			System.out.println(strSql);
 			ps = dba.prepareStatement(strSql);

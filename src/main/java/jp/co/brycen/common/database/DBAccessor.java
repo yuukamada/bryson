@@ -54,7 +54,7 @@ public final class DBAccessor {
 
 			if(conn == null){
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/wms", "wms", "wms_pass");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/wms", "wms_user", "wms_pass");
 			}
 
 			// オートコミットにしない

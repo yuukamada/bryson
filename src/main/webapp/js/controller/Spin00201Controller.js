@@ -4,15 +4,16 @@
 
 function spin00201Dto(){
 	  this.initFlg = true;
-	  this.arvlplndateFrom = "";
-	  this.arvlplndateTo = "";
-	  this.siplnno = "";
-	  this.stscd = "";
-	  this.divkbn = "";
-	  this.itemcd = "";
-	  this.itemnm = "";
-	  this.spplycd = "";
-	  this.spplynm = "";
+	  this.id = "";
+	  this.name = "";
+	  this.age = "";
+	  this.address = "";
+	  this.experience = "";
+	  this.communication = "";
+	  this.coding = "";
+	  this.design = "";
+	  this.test = "";
+	  this.physical = "";
 	  this.pageNum = 1;
 }
 
@@ -37,17 +38,17 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 
 
 	// 一覧の[入荷予定番号]リンクをクリック
-	$scope.siplnnoLinkClick = function(siplnno){
+	$scope.idLinkClick = function(id){
 		dtoSpin00201.initFlg = false;
 
-		fnTransferSpin00101(siplnno);
+		fnTransferSpin00101(id);
 	}
 
 	/**
 	 * 一覧の[入荷予定番号]リンクがクリックされたときの処理
-	 * @param siplnno		入荷予定番号
+	 * @param age		入荷予定番号
 	 */
-	function fnTransferSpin00101(siplnno){
+	function fnTransferSpin00101(id){
 
 		// [入荷予定登録]画面のインスタンスがなければ作成
 		if(dtoSpin00101 == null){
@@ -55,7 +56,7 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 		}
 
 		// 入荷伝票番号をセット
-		dtoSpin00101.siplnno = siplnno;
+		dtoSpin00101.id = id;
 		dtoSpin00101.initFlg = false;
 
 		// [入荷予定登録]画面へ遷移
@@ -85,9 +86,9 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 		header.push(column);
 
 		column = new columnInfo();
-		column.title = "入荷伝票番号";
-		column.name = "SIPLNNO";
-		column.template = "<a ng-click=\"siplnnoLinkClick('{SIPLNNO}');\">{SIPLNNO}</a>";
+		column.title = "タレント番号";
+		column.name = "ID";
+		column.template = "<a ng-click=\"idLinkClick('{ID}');\">{ID}</a>";
 		column.dataType = dataTypeString;
 		column.width = 150;
 		column.align = 1;
@@ -97,7 +98,7 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 		column.title = "ステータス";
 		column.name = "PLANSTSNM";
 		// サンプル：例えばテキストボックスで表示したい場合
-		//column.template = "<input type='text' data-ng-model='{SIPLNNO}' ng-init={SIPLNNO}='{PLANSTSNM}' >";
+		//column.template = "<input type='text' data-ng-model='{age}' ng-init={age}='{PLANSTSNM}' >";
 		column.dataType = dataTypeString;
 		column.width = 150;
 		column.align = 1;
@@ -113,7 +114,7 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 
 		column = new columnInfo();
 		column.title = "仕入先コード";
-		column.name = "SPPLYCD";
+		column.name = "design";
 		column.dataType = dataTypeString;
 		column.width = 100;
 		column.align = 1;
@@ -121,7 +122,7 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 
 		column = new columnInfo();
 		column.title = "仕入先名";
-		column.name = "SPPLYNM";
+		column.name = "test";
 		column.dataType = dataTypeString;
 		column.width = 250;
 		column.align = 0;
@@ -155,7 +156,7 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 		};
 		var res = callWebService(service + tmt280SearchWs, request,
 	        function(response) {
-	      			$scope.divkbns = getRows($scope, response);
+	      			$scope.experiences = getRows($scope, response);
 	  			 	$scope.$apply();
 	            },
 	        null, null, null
@@ -174,26 +175,26 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 
 		// 保持している検索条件を画面にセット
     	$timeout(function() {
-    		if(dtoSpin00201.arvlplndateFrom == undefined || dtoSpin00201.arvlplndateFrom == ""){
+    		if(dtoSpin00201.id == undefined || dtoSpin00201.id == ""){
     			$scope.$broadcast ('setDate1', datePickerInitTypeBlank);
     		} else {
-    			$scope.$broadcast ('setDate1', datePickerInitTypeValue, dtoSpin00201.arvlplndateFrom);
+    			$scope.$broadcast ('setDate1', datePickerInitTypeValue, dtoSpin00201.id);
     		}
 
-    		if(dtoSpin00201.arvlplndateTo == undefined || dtoSpin00201.arvlplndateTo == ""){
+    		if(dtoSpin00201.name == undefined || dtoSpin00201.name == ""){
     			$scope.$broadcast ('setDate2', datePickerInitTypeBlank);
     		} else {
-    			$scope.$broadcast ('setDate2', datePickerInitTypeValue, dtoSpin00201.arvlplndateTo);
+    			$scope.$broadcast ('setDate2', datePickerInitTypeValue, dtoSpin00201.name);
     		}
 		});
 
-    	$scope.siplnno = dtoSpin00201.siplnno;
-		$scope.stscd = dtoSpin00201.stscd;
-		$scope.divkbnModel = dtoSpin00201.divkbn;
-		$scope.itemcd = dtoSpin00201.itemcd;
-		$scope.itemnm = dtoSpin00201.itemnm;
-		$scope.spplycd = dtoSpin00201.spplycd;
-		$scope.spplynm = dtoSpin00201.spplynm;
+    	$scope.age = dtoSpin00201.age;
+		$scope.address = dtoSpin00201.address;
+		$scope.experienceModel = dtoSpin00201.experience;
+		$scope.communication = dtoSpin00201.communication;
+		$scope.coding = dtoSpin00201.coding;
+		$scope.design = dtoSpin00201.design;
+		$scope.test = dtoSpin00201.test;
 
 		// 初期表示Webサービス
 		var res = callWebService(service + spin00201InitWs, request, function(response) {}, null, null, null);
@@ -250,7 +251,7 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
             }, null,
             function() {
             	// TODO:仕様にそったものを書く
-/*            	if(fnIsNumber(siplnno) == false){
+/*            	if(fnIsNumber(age) == false){
             		alert("だめ");
                 	return false;
             	}*/
@@ -322,36 +323,39 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
      */
 	function fnStoreSearchCondition(){
 
-/*		arvlplndateFrom = $scope.datetimeValue.date1;
-		arvlplndateTo = $scope.datetimeValue.date2;
+/*		id = $scope.datetimeValue.date1;
+		name = $scope.datetimeValue.date2;
 
-		siplnno = $scope.siplnno;
-		stscd = $scope.stscd;
-		divkbn = $scope.divkbnModel;
-		itemcd = $scope.itemcd;
-		spplycd = $scope.spplycd;*/
+		age = $scope.age;
+		address = $scope.address;
+		experience = $scope.experienceModel;
+		communication = $scope.communication;
+		design = $scope.design;*/
 
-		dtoSpin00201.arvlplndateFrom = $scope.datetimeValue.date1;
-		dtoSpin00201.arvlplndateTo = $scope.datetimeValue.date2;
-		dtoSpin00201.siplnno = $scope.siplnno;
-		dtoSpin00201.stscd = $scope.stscd;
-		dtoSpin00201.divkbn = $scope.divkbnModel;
-		dtoSpin00201.itemcd = $scope.itemcd;
-		dtoSpin00201.spplycd = $scope.spplycd;
-		dtoSpin00201.spplynm = $scope.spplynm;
+		dtoSpin00201.id = $scope.datetimeValue.date1;
+		dtoSpin00201.name = $scope.datetimeValue.date2;
+		dtoSpin00201.age = $scope.age;
+		dtoSpin00201.address = $scope.address;
+		dtoSpin00201.experience = $scope.experience;
+		dtoSpin00201.communication = $scope.communication;
+		dtoSpin00201.design = $scope.design;
+		dtoSpin00201.test = $scope.test;
 	}
 
     // リクエストを取得する
     function fnGetRequest(pageNum, dispNum){
     	var request = {
             	"spin00201SearchCondition":{
-                	"ARVLPLNDATEFROM": dtoSpin00201.arvlplndateFrom,
-                    "ARVLPLNDATETO": dtoSpin00201.arvlplndateTo,
-                    "SIPLNNO": dtoSpin00201.siplnno,
-                    "STSCD": dtoSpin00201.stscd,
-                    "DIVKBN": dtoSpin00201.divkbn,
-                    "ITEMCD": dtoSpin00201.itemcd,
-                    "SPPLYCD": dtoSpin00201.spplycd
+                	"ID": dtoSpin00201.id,
+                    "NAME": dtoSpin00201.name,
+                    "AGE": dtoSpin00201.age,
+                    "ADDRESS": dtoSpin00201.address,
+                    "EXPERIENCE": dtoSpin00201.experience,
+                    "COMMUNICATION": dtoSpin00201.communication,
+                    "CODING": dtoSpin00201.coding,
+                    "DESIGN": dtoSpin00201.design,
+                    "TEST": dtoSpin00201.test,
+                    "PHYSICAL": dtoSpin00201.physical
                 },
                 "pageInfo":{
                 	"pageNum": pageNum,
@@ -416,15 +420,15 @@ wmsController.controller('Spin00201Ctrl', ['$scope', '$http', '$location', '$mod
 
     // [クリア]ボタンクリック
     $scope.clearBtnClick = function () {
-    	$scope.siplnno = "";
-    	$scope.itemcd = "";
-    	$scope.spplycd = "";
-    	$scope.divkbnModel ="";
-    	$scope.stscd = "";
+    	$scope.age = "";
+    	$scope.communication = "";
+    	$scope.design = "";
+    	$scope.experienceModel ="";
+    	$scope.address = "";
     	$scope.message = "";
-    	$scope.itemcdMessage = "";
-    	$scope.spplycdMessage = "";
-    	$scope.divkbnMessage = "";
+    	$scope.communicationMessage = "";
+    	$scope.designMessage = "";
+    	$scope.experienceMessage = "";
 
     	// 一覧初期化
     	fnInitList();
