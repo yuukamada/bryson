@@ -68,7 +68,7 @@ public class Spin00101DeleteProcess extends AbstractProcess {
 			ps = dba.prepareStatement(strSql);
 			ps.setString(1, reqSpin00101Delete.accessInfo.CSTMCD);
 			ps.setString(2, reqSpin00101Delete.accessInfo.BRNCHCD);
-			ps.setString(3, reqSpin00101Delete.spin00101DeleteCondition.SIPLNNO);
+//			ps.setString(3, reqSpin00101Delete.spin00101DeleteCondition.SIPLNNO);
 
 			// SQL実行
 			ps.executeUpdate();
@@ -102,7 +102,7 @@ public class Spin00101DeleteProcess extends AbstractProcess {
 			ps = dba.prepareStatement(strSql);
 			ps.setString(1, reqSpin00101Delete.accessInfo.CSTMCD);
 			ps.setString(2, reqSpin00101Delete.accessInfo.BRNCHCD);
-			ps.setString(3, reqSpin00101Delete.spin00101DeleteCondition.SIPLNNO);
+//			ps.setString(3, reqSpin00101Delete.spin00101DeleteCondition.SIPLNNO);
 
 			// SQL実行
 			ps.executeUpdate();

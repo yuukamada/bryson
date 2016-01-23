@@ -45,7 +45,7 @@ public class Spin00101UpdateProcess extends AbstractProcess {
 
 		// レスポンス
 		Spin00101UpdateResponse resSpin00101Update = (Spin00101UpdateResponse)response;
-		resSpin00101Update.spin00101ExecResult.SIPLNNO = reqSpin00101Update.spin00101ExecHeader.SIPLNNO;
+//		resSpin00101Update.spin00101ExecResult.SIPLNNO = reqSpin00101Update.spin00101ExecHeader.SIPLNNO;
 
 		return resSpin00101Update;
 	}
@@ -90,7 +90,7 @@ public class Spin00101UpdateProcess extends AbstractProcess {
 			ps.setString(4, FuncID.FPIN0010);
 			ps.setString(5, reqSpin00101Update.accessInfo.CSTMCD);
 			ps.setString(6, reqSpin00101Update.accessInfo.BRNCHCD);
-			ps.setString(7, reqSpin00101Update.spin00101ExecHeader.SIPLNNO);
+			//			ps.setString(7, reqSpin00101Update.spin00101ExecHeader.SIPLNNO);
 
 			// SQL実行
 			ps.executeUpdate();
@@ -128,14 +128,14 @@ public class Spin00101UpdateProcess extends AbstractProcess {
 
 			// バインド変数セット
 			ps = dba.prepareStatement(strSql);
-			ps.setString(1, reqSpin00101Update.spin00101ExecHeader.SPPLYCD);
-			ps.setString(2, reqSpin00101Update.spin00101ExecHeader.DIVKBN);
-			ps.setString(3, reqSpin00101Update.spin00101ExecHeader.SIREMARK);
+			//			ps.setString(1, reqSpin00101Update.spin00101ExecHeader.SPPLYCD);
+			//ps.setString(2, reqSpin00101Update.spin00101ExecHeader.DIVKBN);
+			//ps.setString(3, reqSpin00101Update.spin00101ExecHeader.SIREMARK);
 			ps.setString(4, reqSpin00101Update.accessInfo.USRCD);
 			ps.setString(5, FuncID.FPIN0010);
 			ps.setString(6, reqSpin00101Update.accessInfo.CSTMCD);
 			ps.setString(7, reqSpin00101Update.accessInfo.BRNCHCD);
-			ps.setString(8, reqSpin00101Update.spin00101ExecHeader.SIPLNNO);
+			//ps.setString(8, reqSpin00101Update.spin00101ExecHeader.SIPLNNO);
 
 			// SQL実行
 			ps.executeUpdate();

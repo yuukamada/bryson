@@ -52,6 +52,79 @@
 						</dl>
 					</div><!--/col_box_inner-->
 
+					<div class="col_box_inner">
+						<dl>
+							<dt>タレント番号</dt>
+							<dd>
+								<input drt-string type="text" name="id" data-ng-model="id" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>名前</dt>
+							<dd>
+								<input drt-string type="text" name="name" data-ng-model="name" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>年齢</dt>
+							<dd>
+								<input drt-string type="text" name="age" data-ng-model="age" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>住所</dt>
+							<dd>
+								<input drt-string type="text" name="address" data-ng-model="address" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>経験年数</dt>
+							<dd>
+								<input drt-string type="text" name="experience" data-ng-model="experience" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>コミュニケーション能力</dt>
+							<dd>
+								<input drt-string type="text" name="communication" data-ng-model="communication" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>コーディング能力</dt>
+							<dd>
+								<input drt-string type="text" name="coding" data-ng-model="coding" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>設計能力</dt>
+							<dd>
+								<input drt-string type="text" name="design" data-ng-model="design" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>テスト能力</dt>
+							<dd>
+								<input drt-string type="text" name="test" data-ng-model="test" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>体力</dt>
+							<dd>
+								<input drt-string type="text" name="physical" data-ng-model="physical" value="" style="width:120px">
+								<div class="inputError">{{}}</div>
+							</dd>
+						</dl>
+					</div><!--/col_box_inner-->
+
 				</div><!--/search_conditions_box-->
 
 				<div class="search_conditions_box">
@@ -71,6 +144,7 @@
 			<div id="bottom_button_area">
 				<p><input type="button" data-ng-click="btnConfirmClick();" id="btnConfirm" class="btn green" name="確 定" value="確 定" ng-show="btnConfirmShow"></p>
 				<p><input type="button" data-ng-click="btnDeleteClick();" id="btnDelete" class="btn green" name="伝票削除" value="伝票削除" ng-show="btnDeleteShow"></p>
+				<p><input type="button" data-ng-click="btnOutputClick();" id="btnOutput" class="btn green" name="PDF出力" value="PDF出力" ng-show="btnDeleteShow"></p>
 				<p style="float:right"><input type="button" data-ng-click="btnBackClick();" id="btnBack" class="btn green" name="入荷予定へ戻る" value="入荷予定へ戻る" ng-show="btnBackShow"></p>
 			</div><!--/bottom_button_area-->
 

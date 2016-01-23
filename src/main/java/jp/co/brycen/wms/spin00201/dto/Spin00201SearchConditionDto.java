@@ -8,34 +8,41 @@ import jp.co.brycen.common.dto.AbstractDto;
  */
 public class Spin00201SearchConditionDto extends AbstractDto{
 
-	// 入荷予定(From)
-	public String ARVLPLNDATEFROM;
+	// タレント番号
+	public int ID;
 
-	// 入荷予定(To)
-	public String ARVLPLNDATETO;
+	// 氏名
+	public String NAME;
 
-	// 入荷伝票番号
-	public String SIPLNNO;
+	// 年齢
+	public int AGE;
 
-	// ステータス
-	public String STSCD;
+	// 住所
+	public String ADDRESS;
 
-	// 受払区分
-	public String DIVKBN;
+	// 経験年数
+	public int EXPERIENCE;
 
-	// 商品コード
-	public String ITEMCD;
+	// コミュニケーション能力
+	public String COMMUNICATION;
 
-	// 仕入先コード
-	public String SPPLYCD;
+	// コーディング能力
+	public int CODING;
+
+	// 設計能力
+	public int DESIGN;
+
+	// テスト能力
+	public int TEST;
+
+	// 体力
+	public int PHYSICAL;
 
 	// チェック
 	public String CHK1;
 
-
 	// チェック
 	public String CHK2;
-
 
 	// チェック
 	public String CHK3;
@@ -47,5 +54,4 @@ public class Spin00201SearchConditionDto extends AbstractDto{
 
 	// チェック
 	public String CHK5;
-
 }

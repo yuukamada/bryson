@@ -5,12 +5,16 @@
 // ヘッダ
 function spin00101Dto(){
 	  this.initFlg = true;
-	  this.siplnno = "";
-	  this.stscd = "";
-	  this.arvlplndate = "";
-	  this.divkbn = "";
-	  this.spplycd = "";
-	  this.siremark = "";
+	  this.id = "";
+	  this.name = "";
+	  this.age = "";
+	  this.address = "";
+	  this.experience = "";
+	  this.communication = "";
+	  this.coding = "";
+	  this.design = "";
+	  this.test = "";
+	  this.physical = "";
 }
 
 var dtoSpin00101 = null;												// 画面情報保持(ヘッダ)
@@ -32,6 +36,12 @@ wmsController.controller('Spin00101Ctrl', ['$scope', '$http', '$location', '$mod
 	// [確定]ボタンクリック
 	$scope.btnConfirmClick = function(){
 		fnConfirm();
+		//$location.path('/' + SPIN00201);
+	}
+
+	// [PDF出力]ボタンクリック
+	$scope.btnOutputClick = function(){
+		fnOutput();
 		//$location.path('/' + SPIN00201);
 	}
 
@@ -147,7 +157,6 @@ wmsController.controller('Spin00101Ctrl', ['$scope', '$http', '$location', '$mod
 				"UPDDATETIME": $scope.upddatetime
 			}
 		}
-		alert("はいった！");
 
 		// ヘッダのメッセージをクリア
 		fnClearHeaderMessage();
@@ -156,13 +165,11 @@ wmsController.controller('Spin00101Ctrl', ['$scope', '$http', '$location', '$mod
 		var res = callWebService(service + spin00101CheckWs, request,
             function(response) {
 				console.log("check success");
-				alert("もうチョイ入った");
 
 				var msg = [];
 
 				// コントロールと関係ないエラー
 				if(response.fatalError.length != 0){
-					alert("コンソールと関係ない")
 					var errors = response.fatalError;
 					for (i = 0; i < errors.length; i++) {
 						// 明細0件
@@ -179,13 +186,82 @@ wmsController.controller('Spin00101Ctrl', ['$scope', '$http', '$location', '$mod
 				}
 
 				if(fnSetErrorMsg($scope, response.fatalError) == true || msg.length != 0){
-					alert("よくわかんないエラー")
 					return
 				} else {
-					alert("うまくいった？");
 					// DBに登録
 					fnRegistRecord();
 				}
+			},
+            function(response) {
+	        	console.log("check error");
+            }, null, null
+		);
+	}
+
+	/**
+	 * 出力
+	 */
+	function fnOutput(){
+
+		// リクエストの作成
+		var request = {
+			"accessInfo":{
+				"USRCD": loginInfo.usrcd,
+				"CSTMCD": loginInfo.cstmcd,
+				"BRNCHCD":loginInfo.brnchcd
+			},
+			"spin00101ExecHeader":{
+				"ID": $scope.id,
+				"NAME": $scope.name,
+				"AGE": $scope.age,
+				"ADDRESS": $scope.address,
+				"EXPERIENCE": $scope.experience,
+				"COMMUNICATION": $scope.communication,
+				"CODING": $scope.coding,
+				"DESIGN": $scope.design,
+				"TEST": $scope.test,
+				"PHYSICAL": $scope.physical
+			}
+		}
+
+		// ヘッダのメッセージをクリア
+		fnClearHeaderMessage();
+
+		// 入力チェック
+		var res = callWebService(service + spin00101CheckWs, request,
+            function(response) {
+				console.log("check success");
+				var msg = [];
+
+				// コントロールと関係ないエラー
+				if(response.fatalError.length != 0){
+					var errors = response.fatalError;
+					for (i = 0; i < errors.length; i++) {
+//						// 明細0件
+//						if(errors[i].errId == "ME000074"){
+//							msg.push({"str":errors[i].errMsg});
+//						}
+//						// 仕入先不一致
+//						if(errors[i].errId == "MW000012"){
+//							confirmPopup(AlertService, errors[i].errMsg, confirmTitle, $scope.spplycdOKClick);
+//						}
+					}
+					$scope.messages = msg;
+					$scope.$apply();
+				}
+
+				//pdfを表示（すぐ表示するとＰＤＦ出力が間に合わない？）
+		    	$(this).delay(2000).queue(function() {
+		    		 window.open('/pdf/test.pdf');
+		    		 $(this).dequeue();
+		    	});
+
+//				if(fnSetErrorMsg($scope, response.fatalError) == true || msg.length != 0){
+//					return
+//				} else {
+//					// DBに登録
+//					fnRegistRecord();
+//				}
 			},
             function(response) {
 	        	console.log("check error");
@@ -331,16 +407,16 @@ wmsController.controller('Spin00101Ctrl', ['$scope', '$http', '$location', '$mod
 
 		// 変更([入荷予定照会]から遷移)
 		if(dtoSpin00101.initFlg == false){
-			fnSetEditMode(dtoSpin00101.siplnno);
+			fnSetEditMode(dtoSpin00101.id);
 		}
 	}
 
 
 	/**
 	 * 編集モードで画面を表示する
-	 * @Param siplnno			入荷伝票番号
+	 * @Param id			入荷伝票番号
 	 */
-	function fnSetEditMode(siplnno){
+	function fnSetEditMode(id){
 
 		// ボタン制御
 		$scope.btnConfirmShow = true;
@@ -349,7 +425,7 @@ wmsController.controller('Spin00101Ctrl', ['$scope', '$http', '$location', '$mod
 
 		request = {
 			"spin00101SearchCondition":{
-				"SIPLNNO": siplnno
+				"ID": id
 			},
 			"accessInfo":{
 				"USRCD": loginInfo.usrcd,
@@ -387,12 +463,16 @@ wmsController.controller('Spin00101Ctrl', ['$scope', '$http', '$location', '$mod
 	 * DBから取得した値をセット
 	 */
 	function fnSetHeaderData(response){
-		$scope.siplnno = response.spin00101Search.SIPLNNO;
-		$scope.sts = response.spin00101Search.PLANSTSNM;
-		$scope.spplycd = response.spin00101Search.SPPLYCD;
-		$scope.divkbnModel = response.spin00101Search.DIVKBN;
-		$scope.siremark = response.spin00101Search.SIREMARK;
-		$scope.upddatetime = response.spin00101Search.UPDDATETIME;
+		$scope.id = response.spin00101Search.ID;
+		$scope.name = response.spin00101Search.NAME;
+		$scope.age = response.spin00101Search.AGE;
+		$scope.address = response.spin00101Search.ADDRESS;
+		$scope.experience = response.spin00101Search.EXPERIENCE;
+		$scope.communication = response.spin00101Search.COMMUNICATION;
+		$scope.coding = response.spin00101Search.CODING;
+		$scope.design = response.spin00101Search.DESIGN;
+		$scope.test = response.spin00101Search.TEST;
+		$scope.physical = response.spin00101Search.PHYSICAL;
 	}
 
 }])

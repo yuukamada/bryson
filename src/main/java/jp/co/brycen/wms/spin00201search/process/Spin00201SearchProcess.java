@@ -15,7 +15,8 @@ public class Spin00201SearchProcess extends Spin00201SearchAllRecProcess {
 	@Override
 	protected String setLimit(Integer pageNum, Integer dispNum)
 	{
-		Integer startNum = (pageNum -1) * dispNum;
-		return " LIMIT " + dispNum + " OFFSET " + startNum + " ";
+//		Integer startNum = (pageNum -1) * dispNum;
+//		return " LIMIT " + dispNum + " OFFSET " + startNum + " ";
+		return "";
 	}
 }

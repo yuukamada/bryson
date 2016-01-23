@@ -49,7 +49,7 @@ public class Spin00101RegistProcess extends AbstractProcess {
 
 		// レスポンス
 		Spin00101RegistResponse resSpin00101Regist = (Spin00101RegistResponse)response;
-		resSpin00101Regist.spin00101ExecResult.SIPLNNO = siplnno;
+//		resSpin00101Regist.spin00101ExecResult.SIPLNNO = siplnno;
 
 		return resSpin00101Regist;
 	}
@@ -212,9 +212,9 @@ public class Spin00101RegistProcess extends AbstractProcess {
 			ps.setString(1, reqSpin00101Regist.accessInfo.CSTMCD);
 			ps.setString(2, reqSpin00101Regist.accessInfo.BRNCHCD);
 			ps.setString(3, siplnno);
-			ps.setString(4, reqSpin00101Regist.spin00101ExecHeader.SPPLYCD);
-			ps.setString(5, reqSpin00101Regist.spin00101ExecHeader.DIVKBN);
-			ps.setString(6, reqSpin00101Regist.spin00101ExecHeader.SIREMARK);
+//			ps.setString(4, reqSpin00101Regist.spin00101ExecHeader.SPPLYCD);
+//			ps.setString(5, reqSpin00101Regist.spin00101ExecHeader.DIVKBN);
+//			ps.setString(6, reqSpin00101Regist.spin00101ExecHeader.SIREMARK);
 			ps.setString(7, reqSpin00101Regist.accessInfo.USRCD);
 			ps.setString(8, FuncID.FPIN0010);
 			ps.setString(9, reqSpin00101Regist.accessInfo.USRCD);

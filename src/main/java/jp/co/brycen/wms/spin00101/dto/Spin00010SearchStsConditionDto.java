@@ -8,9 +8,33 @@ import jp.co.brycen.common.dto.AbstractDto;
  */
 public class Spin00010SearchStsConditionDto extends AbstractDto{
 
-	// レコード区分
-	public String RCDKBN;
+		// タレント番号
+		public int ID;
 
-	// データコード
-	public String DATACD;
+		// 氏名
+		public String NAME;
+
+		// 年齢
+		public int AGE;
+
+		// 住所
+		public String ADDRESS;
+
+		// 経験年数
+		public int EXPERIENCE;
+
+		// コミュニケーション能力
+		public int COMMUNICATION;
+
+		// コーディング能力
+		public int CODING;
+
+		// 設計能力
+		public int DESIGN;
+
+		// テスト能力
+		public int TEST;
+
+		// 体力
+		public int PHYSICAL;
 }
